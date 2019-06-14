@@ -45,5 +45,34 @@ int main(int argc, char *argv[]){
    std::cout << v2 << std::endl;
    std::cout << std::endl;
 
-   return 0;
+   // A view increasing the number of dimensions
+   auto v3 = xt::view(b,xt::all(), xt::all(), xt::newaxis(), xt::all());
+   // v3.shape = { 3, 2, 1, 4 }
+   // v3(0,0,0,0) = a(0,0,0)
+
+    std::cout << v3(0,0,0,0) << std::endl;
+    std::cout << v3(1,1,1,1) << std::endl;
+    std::cout << std::endl;
+
+    std::cout << "The complete v3 view: " << std::endl;
+    std::cout << v3 << std::endl;
+    std::cout << std::endl;
+
+    // A view with non-contiguous slices
+    auto v4 = xt::view(b,xt::drop(0), xt::all(), xt::keep(0,3));
+    // v3.shape = { 2, 2, 2 }
+    // => v4(0,0,0) = a(1,0,0)
+    // => v4(1,1,1) = a(2,1,3)
+
+    std::cout << v4(0,0,0) << std::endl;
+    std::cout << v4(1,1,1) << std::endl;
+    std::cout << std::endl;
+
+    std::cout << "The complete v4 view: " << std::endl;
+    std::cout << v4 << std::endl;
+    std::cout << std::endl;
+
+
+
+    return 0;
 }
