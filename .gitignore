@@ -1,0 +1,37 @@
+# temporary vim files
+*.swp
+*.swo
+#
+.DS_Store
+.ipynb_checkpoints
+*.png
+
+# emacs backup file
+*~
+# emacs recovery file
+\#*\#
+# emacs lock file
+.\#*
+#build directory
+build
+#object files
+*.o
+
+#static libraries
+*.a
+
+#share libraries
+*.so
+*.dylib
+
+#executable
+a.out
+*.x
+*.pyc
+.pytest_cache/
+
+#tf files
+*.tfevents.*
+*dSYM/*
+*/.pytest_cache/*
+.pytest_cache/*
