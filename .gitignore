@@ -35,3 +35,7 @@ a.out
 *dSYM/*
 */.pytest_cache/*
 .pytest_cache/*
+
+# CLion files
+.idea/
+cmake-build-debug/
