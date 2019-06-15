@@ -6,6 +6,12 @@
 #include "xtensor/xview.hpp"
 #include "xtensor/xio.hpp"
 
+template <typename T>
+void output_view(T V){
+    std::cout << "The view: " << std::endl;
+    std::cout << V << std::endl;
+    std::cout << std::endl;
+}
 int main(int argc, char *argv[]){
    std::vector<size_t> shape = {3, 2, 4};
    xt::xarray<int> a(shape);
@@ -37,26 +43,17 @@ int main(int argc, char *argv[]){
    auto v2 = xt::view(b, 1, xt::all(), xt::range(0, 4, 2));
    // v2.shape() = {2, 2}
    // v2(0,0)
-   std::cout << v2(0,0) << std::endl;
-   std::cout << v2(1,1) << std::endl;
-   std::cout << std::endl;
-   
-   std::cout << "The complete v2 view: " << std::endl;
-   std::cout << v2 << std::endl;
-   std::cout << std::endl;
+   output_view(v2);
+   output_view(v2(0,0));
 
    // A view increasing the number of dimensions
    auto v3 = xt::view(b,xt::all(), xt::all(), xt::newaxis(), xt::all());
    // v3.shape = { 3, 2, 1, 4 }
    // v3(0,0,0,0) = a(0,0,0)
 
-    std::cout << v3(0,0,0,0) << std::endl;
-    std::cout << v3(1,1,1,1) << std::endl;
-    std::cout << std::endl;
-
-    std::cout << "The complete v3 view: " << std::endl;
-    std::cout << v3 << std::endl;
-    std::cout << std::endl;
+   output_view(v3(0,0,0,0));
+   output_view(v3(2,3,1,4));
+   output_view(v3);
 
     // A view with non-contiguous slices
     auto v4 = xt::view(b,xt::drop(0), xt::all(), xt::keep(0,3));
@@ -64,13 +61,9 @@ int main(int argc, char *argv[]){
     // => v4(0,0,0) = a(1,0,0)
     // => v4(1,1,1) = a(2,1,3)
 
-    std::cout << v4(0,0,0) << std::endl;
-    std::cout << v4(1,1,1) << std::endl;
-    std::cout << std::endl;
-
-    std::cout << "The complete v4 view: " << std::endl;
-    std::cout << v4 << std::endl;
-    std::cout << std::endl;
+    output_view(v4(0,0,0));
+    output_view(v4(1,1,1));
+    output_view((v4));
 
 
 
