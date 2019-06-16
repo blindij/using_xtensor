@@ -54,7 +54,7 @@ int main(int argc, char *argv[]){
    // v3(0,0,0,0) = a(0,0,0)
 
    PRINTER(v3(0,0,0,0));
-   PRINTER(v3(2,3,1,4));
+   PRINTER(v3(2,1,0,3));
    PRINTER(v3);
 
     // A view with non-contiguous slices
