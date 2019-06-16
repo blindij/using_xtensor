@@ -7,6 +7,7 @@
 #include "xtensor/xio.hpp"
 
 #define PRINTER(name) printer(#name, (name))
+
 // description of this construct found here:
 // https://stackoverflow.com/questions/3386861/converting-a-variable-name-to-a-string-in-c
 
@@ -54,7 +55,11 @@ int main(int argc, char *argv[]){
    // v3(0,0,0,0) = a(0,0,0)
 
    PRINTER(v3(0,0,0,0));
+<<<<<<< HEAD
    PRINTER(v3(2,1,0,3));
+=======
+   PRINTER(v3(2,3,1,4));
+>>>>>>> refactor_views
    PRINTER(v3);
 
     // A view with non-contiguous slices
