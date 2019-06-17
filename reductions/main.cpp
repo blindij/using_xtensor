@@ -52,5 +52,21 @@ int main() {
     std::cout << "t2 = " << t2 << std::endl;
     std::cout << "t3 = " << t3 << std::endl;
     std::cout << std::endl;
+
+    // Standard deviation
+    std::cout << "------ S t a n d a r d   d e v i a t i o n -------" << std::endl;
+    xt::xarray<int> a_sd = {{1, 2, 3}, {4, 5, 6}};
+    xt::xarray<int> u0 = xt::stddev(a, {1});
+    xt::xarray<int> u1 = xt::stddev(a);
+    int u2 = xt::stddev(a)();
+    auto u3 = xt::stddev(a, {0});
+    std::cout << "u0 = " << u0 << std::endl;
+    std::cout << "u1 = " << u1 << std::endl;
+    std::cout << "u2 = " << u2 << std::endl;
+    std::cout << "u3 = " << u3 << std::endl;
+    std::cout << std::endl;
+
+
+    
     return 0;
 }
