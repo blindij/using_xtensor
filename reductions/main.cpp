@@ -27,5 +27,17 @@ int main() {
     std::cout << "p3 = " << p3 << std::endl;
     std::cout << std::endl;
 
+    // Mean
+    std::cout << "------ M e a n -------" << std::endl;
+    xt::xarray<int> a_mean = {{1, 2, 3}, {4, 5, 6}};
+    xt::xarray<int> s0 = xt::mean(a_mean,{1});
+    xt::xarray<int> s1 = xt::mean(a_mean);
+    int s2 = xt::mean(a_mean)();
+    auto s3 = xt::mean(a_mean, {0});
+    std::cout << "s1 = " << s1 << std::endl;
+    std::cout << "s2 = " << s2 << std::endl;
+    std::cout << "s3 = " << s3 << std::endl;
+    std::cout << std::endl;
+
     return 0;
 }
