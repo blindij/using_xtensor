@@ -34,10 +34,23 @@ int main() {
     xt::xarray<int> s1 = xt::mean(a_mean);
     int s2 = xt::mean(a_mean)();
     auto s3 = xt::mean(a_mean, {0});
+    std::cout << "s0 = " << s0 << std::endl;
     std::cout << "s1 = " << s1 << std::endl;
     std::cout << "s2 = " << s2 << std::endl;
     std::cout << "s3 = " << s3 << std::endl;
     std::cout << std::endl;
 
+    // Variance
+    std::cout << "------ V a r i a n c e -------" << std::endl;    
+    xt::xarray<int> a = {{1, 2, 3},{4, 5, 6}};
+    xt::xarray<int> t0 = xt::variance(a,{1});
+    xt::xarray<int> t1 = xt::variance(a);
+    int t2 = xt::variance(a)();
+    auto t3 = xt::variance(a, {0});
+    std::cout << "t0 = " << t0 << std::endl;
+    std::cout << "t1 = " << t1 << std::endl;
+    std::cout << "t2 = " << t2 << std::endl;
+    std::cout << "t3 = " << t3 << std::endl;
+    std::cout << std::endl;
     return 0;
 }
