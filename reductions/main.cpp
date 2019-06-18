@@ -1,6 +1,7 @@
 #include <iostream>
 #include <xtensor/xarray.hpp>
 #include <xtensor/xmath.hpp>
+#include <xtensor/xnorm.hpp>
 #include <xtensor/xio.hpp>
 int main() {
     // Sum
@@ -91,30 +92,30 @@ int main() {
     std::cout << std::endl;
 
     // Norms
-//    std::cout << "------ N o r m s -------" << std::endl;
-//    xt::xarray<double> a_norm {{1., 2., 3.},{4., 5., 6.}};
-//    xt::xarray<double> y0 = xt::norm_l0(a_norm, {1});
-//    xt::xarray<double> y1 = xt::norm_l1(a_norm, {1});
-//    xt::xarray<double> y2 = xt::norm_sq(a_norm, {1});
-//    xt::xarray<double> y3 = xt::norm_l2(a_norm, {1});
-//    xt::xarray<double> y4 = xt::norm_linf(a_norm, {1});
-//    xt::xarray<double> y5 = xt::norm_lp_to_p(a_norm, {1});
-//    xt::xarray<double> y6 = xt::norm_lp(a_norm, {1});
-//    xt::xarray<double> y7 = xt::norm_induced_l1(a_norm, {1});
-//    xt::xarray<double> y8 = xt::norm_induced_linf(a_norm, {1});
-//    std::cout << "Norm L0 = " << y0 << std::endl;
-//    std::cout << "Norm L1 = " << y1 << std::endl;
-//    std::cout << "Squared L2 Norm = " << y2 << std::endl;
-//    std::cout << "Norm L2 = " << y3 << std::endl;
-//    std::cout << "Norm infinity = " << std::endl;
-//    std::cout << "1-th power of the L1 norm = " << y5 << std::endl;
-//    std::cout << "Lp (L1) norm = " << y6 << std::endl;
-//    std::cout << "Induced L1 norm = " << y7 << std::endl;
-//    std::cout << "Induced inf norm = " << y8 << std::endl;
-//    std::cout << std::endl;
-//     Will no compile error:  no member named 'norm_l0' in namespace 'xt' ???
+    std::cout << "------ N o r m s -------" << std::endl;
+    xt::xarray<double> a_norm {{1., 2., 3.},{4., 5., 6.}};
+    xt::xarray<double> y0 = xt::norm_l0(a_norm, {1});
+    xt::xarray<double> y1 = xt::norm_l1(a_norm, {1});
+    xt::xarray<double> y2 = xt::norm_sq(a_norm, {1});
+    xt::xarray<double> y3 = xt::norm_l2(a_norm, {1});
+    xt::xarray<double> y4 = xt::norm_linf(a_norm, {1});
+    xt::xarray<double> y5 = xt::norm_lp_to_p(a_norm, {1});
+    xt::xarray<double> y6 = xt::norm_lp(a_norm, {1});
+    xt::xarray<double> y7 = xt::norm_induced_l1(a_norm);  // (a_norm, {1});
+    xt::xarray<double> y8 = xt::norm_induced_linf(a_norm); // (a, {1});
+    std::cout << "Norm L0 = " << y0 << std::endl;
+    std::cout << "Norm L1 = " << y1 << std::endl;
+    std::cout << "Squared L2 Norm = " << y2 << std::endl;
+    std::cout << "Norm L2 = " << y3 << std::endl;
+    std::cout << "Norm infinity = " << y4 << std::endl;
+    std::cout << "1-th power of the L1 norm = " << y5 << std::endl;
+    std::cout << "Lp (L1) norm = " << y6 << std::endl;
+    std::cout << "Induced L1 norm = " << y7 << std::endl;
+    std::cout << "Induced inf norm = " << y8 << std::endl;
+    std::cout << std::endl;
 
     //  Accumulating functinos
+    std::cout << "------ A c c u m u l a t i n g   f u n c t i o n s -------" << std::endl;
     xt::xarray<double> a_af = {{1, 2, 3},{4, 5, 6}};
     xt::xarray<double> z0 = xt::cumsum(a, {1});
     std::cout << "cumsum z0 = " << z0 << std::endl;
