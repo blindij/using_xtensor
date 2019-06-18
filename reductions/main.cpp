@@ -71,9 +71,16 @@ int main() {
     xt::xarray<int> a_diff = {{1, 2, 3}, {4, 5, 6}};
     xt::xarray<int> v0 = xt::diff(a_diff, 1, {0});
     xt::xarray<int> v1 = xt::diff(a_diff, 1, {1});
-    std::cout << " v0 = " << v0 << std::endl;
-    std::cout << " v1 = " << v1 << std::endl;
+    std::cout << "v0 = " << v0 << std::endl;
+    std::cout << "v1 = " << v1 << std::endl;
     std::cout << std::endl;
     
+    // Amax
+    std::cout << "------ A m a x -------" << std::endl;
+    xt::xarray<int> a_max = {{1,2,3},{4, 5, 6}};
+    xt::xarray<int> w0 = xt::amax(a, {1});
+    std::cout << "w0 = " << w0 << std::endl;
+    std::cout << std::endl;
+
     return 0;
 }
